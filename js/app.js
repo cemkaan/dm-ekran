@@ -61,7 +61,7 @@ function rollForInputValues(val) {
 // Returns a readable message to display based while making dice rolls
 // Template: '(1d8+1d6+5): 8, 6, 5 (19 total) - 12:34:56'
 function rollDice(dispVal, numArr, sidesArr, modArr) {
-	let message = `(${dispVal}):`;
+	let message = `<span class="has-background-dark has-text-info-light" > ${dispVal}</span >`;
 	let sum = 0;
 
 	// For each value in 'numArr'...
@@ -86,8 +86,8 @@ function rollDice(dispVal, numArr, sidesArr, modArr) {
 	}
 
 	// Finish 'message' with final 'sum' and a time stamp
-	message += ` (Toplam: ${sum})`;
-	message += ' zaman ' + timeStamp();
+	message += ` <strong class="has-text-primary-dark"> Toplam:</strong> ${sum}`;
+	message += ' <span class="has-text-info" > ' + timeStamp() + ' </span> ';
 	// Pass to 'allRollsMessage' to tack on previous rolls and save to localStorage
 	message = allRollsMessage(message);
 	return message;
