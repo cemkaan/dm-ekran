@@ -1,175 +1,189 @@
 <!DOCTYPE HTML>
 <html>
-	<head>
-		<title>DM Screen</title>
-		<meta charset="UTF-8">
-		<link href="https://fonts.googleapis.com/css?family=Kalam:700|Merienda" rel="stylesheet">
-		<link rel="stylesheet" href="./css/normalize.css">
-		<link rel="stylesheet" href="./css/main.css">
-	</head>
-	<body>
-		<header>
-			<h1 class="main-title">DM Screen!</h1>
-			<h2 class="main-subtitle">Created by Trent Stenoien</h2>
-			<!-- If this page gets much bigger, use nav to help navigate around it
-			<fieldset>
-				<p>Links Within This Page</p>
-				<a href="#dice">Dice</a>,
-				<a href="#display">Display</a>,
-				<a href="#pc-tracker">PC Tracker</a>,
-				<a href="#initiative">Initiative Tracker</a>,
-				<a href="#tables">Helpful Tables</a>,
-				<a href="#links">Links</a>
-			</fieldset> -->
-		</header>
-		<main>
-			<div id="left">
-				<div id="dice">
-					<fieldset class="wide">
-						<legend>Dice</legend>
-						<input type="text" placeholder="e.g. 1d20+3">
-						<button>roll</button>
-						<button value="100">d100</button>
-						<button value="20">d20</button>
-						<button value="12">d12</button>
-						<button value="10">d10</button>
-						<button value="8">d8</button>
-						<button value="6">d6</button>
-						<button value="4">d4</button>
-						<button value="3">d3</button>
-					</fieldset>
-				</div>
-				<div id="calculator">
-					<form name="calculator">
-						<table>
-							<tr>
-								<td colspan="4">
-									<input type="text" name="display" value='0'>
-								</td>
-							</tr>
-							<tr>
-								<td><button class="calc-func" name="clearEntry" value="CE">CE</button></td>
-								<td><button class="calc-func" name="clear" value="C">C</button></td>
-								<td><button class="calc-func" name="backspace" value="&larr;">&larr;</button></td>
-								<td><button class="operator" name="divide" value="&#247;">&#247;</button></td>
-							</tr>
-							<tr>
-								<td><button class="number" name="seven" value="7">7</button></td>
-								<td><button class="number" name="eight" value="8">8</button></td>
-								<td><button class="number" name="nine" value="9">9</button></td>
-								<td><button class="operator" name="times" value="&#215;">&#215;</button></td>
-							</tr>
-							<tr>
-								<td><button class="number" name="four" value="4">4</button></td>
-								<td><button class="number" name="five" value="5">5</button></td>
-								<td><button class="number" name="six" value="6">6</button></td>
-								<td><button class="operator" name="minus" value="-">-</button></td>
-							</tr>
-							<tr>
-								<td><button class="number" name="one" value="1">1</button></td>
-								<td><button class="number" name="two" value="2">2</button></td>
-								<td><button class="number" name="three" value="3">3</button></td>
-								<td><button class="operator" name="plus" value="+">+</button></td>
-							</tr>
-							<tr>
-								<td><button class="calc-func" name="negation" value="&#xb1;">&#xb1;</button></td>
-								<td><button class="number" name="zero" value="0">0</button></td>
-								<td><button class="number" name="decimal" value=".">.</button></td>
-								<td><button class="operator" name="equals" value="=">=</button></td>
-							</tr>
-						</table>
-					</form>
-				</div>
-				<p id="display"></p>
-				<div id="pc-tracker">
-					<fieldset class="wide">
-						<legend>PC Tracker</legend>
-						<div class="pc-div"></div>
-						<textarea name="name" rows="2" cols="80" placeholder="Name first followed by a comma..."></textarea>
-						<br>
-						<p>- <strong>Suggestions:</strong> name, race, class, passive perception, AC, summary of character.</p>
-						<button type="button" name="addPC">Add PC</button>
-						<button type="button" name="editPC">Edit PC</button>
-						<button type="button" name="removePC">Remove PC</button>
-					</fieldset>
-				</div>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="https://fonts.googleapis.com/css?family=Kalam:700|Merienda" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+
+</head>
+
+<body class="container">
+
+	<main>
+		<div id="left">
+			<div id="dice" class="section">
+				<fieldset class="block">
+					<legend class="title">ZAR</legend>
+					<input type="text" placeholder="ÖR: 1d20+3" class="input">
+					<button class="button is-primary">ZAR AT</button>
+					<button class="button" value="100">d100</button>
+					<button class="button" value="20">d20</button>
+					<button class="button" value="12">d12</button>
+					<button class="button" value="10">d10</button>
+					<button class="button" value="8">d8</button>
+					<button class="button" value="6">d6</button>
+					<button class="button" value="4">d4</button>
+					<button class="button" value="3">d3</button>
+				</fieldset>
+				<p id="display" class="notification is-info"></p>
 			</div>
-			<div id="right">
-				<div id="initiative">
-					<fieldset class="wide">
-						<legend>Initiative Tracker</legend>
-						<div>
-							<p class="inline"><b>Name:&nbsp;</b></p><input type="text" class="narrow">
-							<p class="inline"><b>Init:&nbsp;</b></p><input type="text" class="narrow">
-						</div>
-						<div>
-							<button>Add to list</button>
-							<button>Placeholder</button><br>
-							<button>Clear by name</button>
-							<button>Clear list</button>
-						</div>
-						<hr>
-						<p></p>
-					</fieldset>
-				</div>
-				<div id="tables">
-					<fieldset class="wide">
-						<legend>Tables</legend>
-						<p>Find me a table for </p>
-						<select name="tables">
-							<option></option>
-							<option value="combat">Combat</option>
-							<option value="cond-dying">Conditions &amp; Dying</option>
-							<option value="eq-weap">Weapons</option>
-							<option value="eq-armor">Armor &amp; Services</option>
-							<option value="misc">Misc</option>
-							<option value="check-str">Strength Checks</option>
-							<option value="check-dex">Dex Checks</option>
-							<option value="check-con">Con Checks</option>
-							<option value="check-int">Int Checks</option>
-							<option value="check-wis">Wis Checks</option>
-							<option value="check-cha">Cha Checks</option>
-							<option value="enc-rand">Random Encounters</option>
-							<option value="enc-build">Encounter Building</option>
-						</select>
-						<button>Switch!</button>
-						<br>
-						<img>
-					</fieldset>
-				</div>
+			<div id="calculator" class="section">
+				<form name="calculator">
+					<table>
+						<tr>
+							<td colspan="4">
+								<input type="text" name="display" class="input" value='0'>
+							</td>
+						</tr>
+						<tr>
+							<td><button class="calc-func button is-danger m-1" name="clearEntry" value="CE">CE</button>
+							</td>
+							<td><button class="calc-func button is-warning m-1" name="clear" value="C">C</button></td>
+							<td><button class="calc-func button is-primary m-1" name="backspace"
+									value="&larr;">&larr;</button></td>
+							<td><button class="operator button is-info m-1" name="divide" value="&#247;">&#247;</button>
+							</td>
+						</tr>
+						<tr>
+							<td><button class="number" name="seven" value="7">7</button></td>
+							<td><button class="number" name="eight" value="8">8</button></td>
+							<td><button class="number" name="nine" value="9">9</button></td>
+							<td><button class="operator button is-info m-1 " name="times" value="&#215;">&#215;</button>
+							</td>
+						</tr>
+						<tr>
+							<td><button class="number" name="four" value="4">4</button></td>
+							<td><button class="number" name="five" value="5">5</button></td>
+							<td><button class="number" name="six" value="6">6</button></td>
+							<td><button class="operator button is-info m-1" name="minus" value="-"> - </button></td>
+						</tr>
+						<tr>
+							<td><button class="number" name="one" value="1">1</button></td>
+							<td><button class="number" name="two" value="2">2</button></td>
+							<td><button class="number" name="three" value="3">3</button></td>
+							<td><button class="operator button is-info m-1 " name="plus" value="+">+</button></td>
+						</tr>
+						<tr>
+							<td><button class="calc-func " name="negation" value="&#xb1;">&#xb1;</button></td>
+							<td><button class="number" name="zero" value="0">0</button></td>
+							<td><button class="number" name="decimal" value=".">.</button></td>
+							<td><button class="operator button is-primary m-1" name="equals" value="=">=</button></td>
+						</tr>
+					</table>
+				</form>
 			</div>
-		</main>
-		<footer>
-			<div id="links">
-				<select>
-					<option value="">Useful Links</option>
-					<option value="https://docs.google.com/spreadsheets/d/1UvfoXDn2PJVkP9QsPrxGT6sXy2JKOa5F08rSeLDy9dE/edit#gid=0">Descriptors: Combat effects randomizer</option>
-					<option value="http://donjon.bin.sh/5e/dungeon/">Dungeon Generator: donjon Generator</option>
-					<option value="http://dhmholley.co.uk/encounter-calculator-5th/">Encounter Calculator: dhmholley.co.uk</option>
-					<option value="http://tools.goblinist.com/5enc">Encounter Generator: Goblinist</option>
-					<option value="http://www.dandwiki.com/wiki/5e_Homebrew">Homebrew: DanDwiki (Worlds, rewards, hazards, quests, more)</option>
-					<option value="http://donjon.bin.sh/5e/initiative/">Initiative Tracker: donjon</option>
-					<option value="http://donjon.bin.sh/5e/magic_items/">Magic Items: donjon</option>
-					<option value="https://app.roll20.net">Mapping: app.roll20.com</option>
-					<option value="http://donjon.bin.sh/5e/monsters/">Monsters: donjon</option>
-					<option value="https://docs.google.com/spreadsheets/d/1n1Mu5LoHujvlG3WSIFdAeS7rHndd9A053BipsbPEmJ8/edit#gid=0">Monsters: Reddit, Monster a Day index</option>
-					<option value="https://www.youtube.com/watch?v=XbS3tPO9sUs&index=3&list=RDM_hrNDhLwvE">Music: Youtube RPG playlist</option>
-					<option value="http://www.mithrilandmages.com/utilities/5ETreasure.php">Names &amp; Treasure: Mithral &amp; Mages</option>
-					<option value="http://rpgtinker.com/index.php">NPC Builder: rpgtinker.com</option>
-					<option value="http://donjon.bin.sh/5e/random/">Random Generators: donjon (encounters, treasure, NPCs, traps, downtime)</option>
-					<option value="https://crobi.github.io/dnd5e-quickref/preview/quickref.html">Reference: Quick Conditions Reference</option>
-					<option value="http://s3.amazonaws.com/slyflourish_content/dnd_campaign_sheet.pdf">Reference: Sly Flourish quick reference</option>
-					<option value="https://drive.google.com/drive/folders/0B7kxaEiej5VlfnVQODdKdjVvclQ2TFFiUy1yOG5NVlVoY29fa3pjdkNGSmFYZU5TZFd6aEE">Resources: 5e Resources</option>
-					<option value="http://www.nerdsourced.com/dungeons-dragons-5e-resources/">Resources: Nerd Sourced</option>
-					<option value=" https://www.reddit.com/r/DnDBehindTheScreen/comments/4tg620/my_5e_dm_toolkit_a_compendium_of_communitycreated/">Resources: Reddit DM Toolkit</option>
-					<option value="http://www.tribality.com/dd-5th-edition-resources/">Resources: Tribality (all official resources and more)</option>
-					<option value="http://donjon.bin.sh/5e/spells/">Spell List: donjon</option>
-					<option value="https://www.dnd-spells.com/spells">Spell Tracker &amp; List: dnd-spells.com</option>
-					<option value="https://open5e.com/index.html">SRD: Open 5e (w/ JSON)</option>
-				</select>
-				<button>Go!</button>
+			<div id="pc-tracker" class="section">
+				<fieldset class="block">
+					<legend class="title">Oyuncu Takibi</legend>
+					<div class="pc-div notification is-primary"></div>
+					<textarea name="name" rows="2" cols="80"
+						placeholder="Önce isim sonra virgülle ayrılmış bilgiler"></textarea>
+					<br>
+					<p>- <strong>Tavsiyeler:</strong> İsim, Irk, class, passive perception(pasif algı), AC(pasif algı),
+						karakter özeti.
+					</p>
+					<button type="button" name="addPC">Add PC</button>
+					<button type="button" name="editPC">Edit PC</button>
+					<button type="button" name="removePC">Remove PC</button>
+				</fieldset>
 			</div>
-		</footer>
-		<script src="./js/app.js"></script>
-	</body>
+		</div>
+		<div id="right">
+			<div id="initiative" class="section">
+				<fieldset class="block">
+					<legend class="title">Girişim Takip</legend>
+					<div>
+						<p class="inline"><b>Name:&nbsp;</b></p><input type="text" class="narrow">
+						<p class="inline"><b>Init:&nbsp;</b></p><input type="text" class="narrow">
+					</div>
+					<div>
+						<button>Add to list</button>
+						<button>Placeholder</button><br>
+						<button>Clear by name</button>
+						<button>Clear list</button>
+					</div>
+					<hr>
+					<p></p>
+				</fieldset>
+			</div>
+			<div id="tables" class="section">
+				<fieldset class="block">
+					<legend class="title">Tables</legend>
+					<p>Tablolar </p>
+					<select name="tables" class="select">
+						<option></option>
+						<option value="combat">Combat</option>
+						<option value="cond-dying">Conditions &amp; Dying</option>
+						<option value="eq-weap">Weapons</option>
+						<option value="eq-armor">Armor &amp; Services</option>
+						<option value="misc">Misc</option>
+						<option value="check-str">Strength Checks</option>
+						<option value="check-dex">Dex Checks</option>
+						<option value="check-con">Con Checks</option>
+						<option value="check-int">Int Checks</option>
+						<option value="check-wis">Wis Checks</option>
+						<option value="check-cha">Cha Checks</option>
+						<option value="enc-rand">Random Encounters</option>
+						<option value="enc-build">Encounter Building</option>
+					</select>
+					<button>Tablo getir!</button>
+					<br>
+					<img>
+				</fieldset>
+			</div>
+		</div>
+	</main>
+	<footer class="footer">
+		<div id="links">
+			<select class="select">
+				<option value="">Faydalı bağlantılar</option>
+				<option
+					value="https://docs.google.com/spreadsheets/d/1UvfoXDn2PJVkP9QsPrxGT6sXy2JKOa5F08rSeLDy9dE/edit#gid=0">
+					Descriptors: Combat effects randomizer</option>
+				<option value="http://donjon.bin.sh/5e/dungeon/">Dungeon Generator: donjon Generator</option>
+				<option value="http://dhmholley.co.uk/encounter-calculator-5th/">Encounter Calculator: dhmholley.co.uk
+				</option>
+				<option value="http://tools.goblinist.com/5enc">Encounter Generator: Goblinist</option>
+				<option value="http://www.dandwiki.com/wiki/5e_Homebrew">Homebrew: DanDwiki (Worlds, rewards, hazards,
+					quests, more)</option>
+				<option value="http://donjon.bin.sh/5e/initiative/">Initiative Tracker: donjon</option>
+				<option value="http://donjon.bin.sh/5e/magic_items/">Magic Items: donjon</option>
+				<option value="https://app.roll20.net">Mapping: app.roll20.com</option>
+				<option value="http://donjon.bin.sh/5e/monsters/">Monsters: donjon</option>
+				<option
+					value="https://docs.google.com/spreadsheets/d/1n1Mu5LoHujvlG3WSIFdAeS7rHndd9A053BipsbPEmJ8/edit#gid=0">
+					Monsters: Reddit, Monster a Day index</option>
+				<option value="https://www.youtube.com/watch?v=XbS3tPO9sUs&index=3&list=RDM_hrNDhLwvE">Music: Youtube
+					RPG playlist</option>
+				<option value="http://www.mithrilandmages.com/utilities/5ETreasure.php">Names &amp; Treasure: Mithral
+					&amp; Mages</option>
+				<option value="http://rpgtinker.com/index.php">NPC Builder: rpgtinker.com</option>
+				<option value="http://donjon.bin.sh/5e/random/">Random Generators: donjon (encounters, treasure, NPCs,
+					traps, downtime)</option>
+				<option value="https://crobi.github.io/dnd5e-quickref/preview/quickref.html">Reference: Quick Conditions
+					Reference</option>
+				<option value="http://s3.amazonaws.com/slyflourish_content/dnd_campaign_sheet.pdf">Reference: Sly
+					Flourish quick reference</option>
+				<option
+					value="https://drive.google.com/drive/folders/0B7kxaEiej5VlfnVQODdKdjVvclQ2TFFiUy1yOG5NVlVoY29fa3pjdkNGSmFYZU5TZFd6aEE">
+					Resources: 5e Resources</option>
+				<option value="http://www.nerdsourced.com/dungeons-dragons-5e-resources/">Resources: Nerd Sourced
+				</option>
+				<option
+					value=" https://www.reddit.com/r/DnDBehindTheScreen/comments/4tg620/my_5e_dm_toolkit_a_compendium_of_communitycreated/">
+					Resources: Reddit DM Toolkit</option>
+				<option value="http://www.tribality.com/dd-5th-edition-resources/">Resources: Tribality (all official
+					resources and more)</option>
+				<option value="http://donjon.bin.sh/5e/spells/">Spell List: donjon</option>
+				<option value="https://www.dnd-spells.com/spells">Spell Tracker &amp; List: dnd-spells.com</option>
+				<option value="https://open5e.com/index.html">SRD: Open 5e (w/ JSON)</option>
+			</select>
+			<button>Git!</button>
+		</div>
+	</footer>
+	<script src="./js/app.js"></script>
+</body>
+
 </html>
