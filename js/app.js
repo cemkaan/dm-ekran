@@ -178,11 +178,11 @@ function getStorage(storage, type) {
 
 
 /* Add New PCs */
-// Takes input, add it to PC array, store array in local storage, and print to page; called by 'Add PC' button
+// Takes input, add it to PC array, store array in local storage, and print to page; called by 'Karakter Ekle' button
 function addPC() {
 	try {
 		// To avoid bugs, disallow this function if currently editing or deleting PCs
-		if (editPCbutton.textContent != 'Edit PC' || removePCbutton.textContent != 'Remove PC') return false;
+		if (editPCbutton.textContent != 'Karakter Düzenle' || removePCbutton.textContent != 'Karakter Kaldır') return false;
 
 		// Take input, add 'strong' tag to name, add to 'myPCs' array, and print the new array
 		const input = PCtextarea.value.trim();
@@ -201,10 +201,10 @@ function addPC() {
 
 
 /* Edit Existing PCs */
-// Creates inline 'edit' buttons; called by 'Edit PC' button
+// Creates inline 'edit' buttons; called by 'Karakter Düzenle' button
 function editPC() {
 	// To avoid bugs, disallow function if currently deleting PCs or if no PCs are being displayed
-	if (removePCbutton.textContent != 'Remove PC') return false;
+	if (removePCbutton.textContent != 'Karakter Kaldır') return false;
 	if (!PCdiv.childNodes.length) return false;
 
 	// Change text content to 'Cancel' and alter alter event listeners
@@ -235,7 +235,7 @@ function createEditDiv() {
 	PCdiv.replaceChild(textInput, target);
 }
 
-// Format and store the revision in 'myPCs', reprint 'myPCs', and revert 'Edit PC' button to original state
+// Format and store the revision in 'myPCs', reprint 'myPCs', and revert 'Karakter Düzenle' button to original state
 function storeRevision() {
 	// Give 'strong' tags to the name in the new input
 	const re = /(\w+),\s/;
@@ -248,15 +248,15 @@ function storeRevision() {
 	});
 	printPCs();
 
-	alterButton(editPCbutton, 'Edit PC', storeRevision, editPC);
+	alterButton(editPCbutton, 'Karakter Düzenle', storeRevision, editPC);
 }
 
 
 /* Delete Existing PCs */
-// Creates inline 'delete' buttons; called by 'Remove PC' button
+// Creates inline 'delete' buttons; called by 'Karakter Kaldır' button
 function removePC() {
 	// To avoid bugs, disallow function if currently editing PCs or if no PCs are being displayed
-	if (editPCbutton.textContent !== 'Edit PC') return false;
+	if (editPCbutton.textContent !== 'Karakter Düzenle') return false;
 	if (!PCdiv.childNodes.length) return false;
 
 	// Change text content to 'Cancel' and alter alter event listeners
@@ -273,12 +273,12 @@ function removePC() {
 	};
 }
 
-// Inline 'delete' button will remove an entry from 'myPCs', reprint the array, and revert 'Remove PC' button
+// Inline 'delete' button will remove an entry from 'myPCs', reprint the array, and revert 'Karakter Kaldır' button
 function deletePcFromArray() {
 	const pc = this.previousSibling.textContent;
 	myPCs.splice(myPCs.indexOf(pc), 1);
 	printPCs();
-	alterButton(removePCbutton, 'Remove PC', removeInlineButtons, removePC);
+	alterButton(removePCbutton, 'Karakter Kaldır', removeInlineButtons, removePC);
 }
 
 
@@ -290,13 +290,13 @@ function alterButton(button, newText, oldListener, newListener) {
 	button.addEventListener('click', newListener);
 }
 
-// Removes edit or remove buttons, reverts 'Cancel' button to 'Edit PC' or 'Remove PC'
+// Removes edit or remove buttons, reverts 'Cancel' button to 'Karakter Düzenle' or 'Karakter Kaldır'
 function removeInlineButtons() {
 	const pcDivs = PCdiv.children;
 	for (let i = 0; i < pcDivs.length; i++) { pcDivs[i].querySelector('button').remove() };
 
-	if (editPCbutton.textContent === 'Cancel') alterButton(editPCbutton, 'Edit PC', removeInlineButtons, editPC);
-	if (removePCbutton.textContent === 'Cancel') alterButton(removePCbutton, 'Remove PC', removeInlineButtons, removePC);
+	if (editPCbutton.textContent === 'Cancel') alterButton(editPCbutton, 'Karakter Düzenle', removeInlineButtons, editPC);
+	if (removePCbutton.textContent === 'Cancel') alterButton(removePCbutton, 'Karakter Kaldır', removeInlineButtons, removePC);
 }
 
 // Display PC array to page and save to local storage

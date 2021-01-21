@@ -27,14 +27,14 @@
 					<button class="button" value="4">d4</button>
 					<button class="button" value="3">d3</button>
 				</fieldset>
-				<p id="display" class="notification is-info"></p>
+				<p id="display" class="notification is-size-4"></p>
 			</div>
 			<div id="calculator" class="section">
 				<form name="calculator">
 					<table>
 						<tr>
 							<td colspan="4">
-								<input type="text" name="display" class="input" value='0'>
+								<input type="text" name="display" class="input is-size-4" value='0'>
 							</td>
 						</tr>
 						<tr>
@@ -78,40 +78,40 @@
 				<fieldset class="block">
 					<legend class="title">Oyuncu Takibi</legend>
 					<div class="pc-div notification is-primary"></div>
-					<textarea name="name" rows="2" cols="80"
+					<textarea class="textarea" name="name" rows="2" cols="80"
 						placeholder="Önce isim sonra virgülle ayrılmış bilgiler"></textarea>
 					<br>
-					<p>- <strong>Tavsiyeler:</strong> İsim, Irk, class, passive perception(pasif algı), AC(pasif algı),
-						karakter özeti.
-					</p>
-					<button type="button" name="addPC">Add PC</button>
-					<button type="button" name="editPC">Edit PC</button>
-					<button type="button" name="removePC">Remove PC</button>
+					<p class="p-2"><strong>Tavsiyeler:</strong> İsim, Irk, class, passive perception(pasif algı),
+						AC(pasif algı),
+						karakter özeti. </p>
+					<button type="button" class="button" name="addPC">Karakter Ekle</button>
+					<button type="button" class="button" name="editPC">Karakter Düzenle</button>
+					<button type="button" class="button" name="removePC">Karakter Kaldır</button>
 				</fieldset>
 			</div>
 		</div>
 		<div id="right">
 			<div id="initiative" class="section">
 				<fieldset class="block">
-					<legend class="title">Girişim Takip</legend>
-					<div>
-						<p class="inline"><b>Name:&nbsp;</b></p><input type="text" class="narrow">
-						<p class="inline"><b>Init:&nbsp;</b></p><input type="text" class="narrow">
+					<legend class="title">Initiative Takip</legend>
+					<div class="box">
+						<p class="inline"><b>İsim:&nbsp;</b></p><input type="text" class="input">
+						<p class="inline"><b>Sayı:&nbsp;</b></p><input type="text" class="input">
 					</div>
 					<div>
-						<button>Add to list</button>
-						<button>Placeholder</button><br>
-						<button>Clear by name</button>
-						<button>Clear list</button>
+						<button class="button is-primary">Listeye Ekle</button>
+						<button class="button is-hidden"></button><br>
+						<button class="button is-warning ">İsimle Sil</button>
+						<button class="button is-info">Listeyi Temizle</button>
 					</div>
 					<hr>
-					<p></p>
+					<p class="notification is-size-4 "></p>
 				</fieldset>
 			</div>
 			<div id="tables" class="section">
 				<fieldset class="block">
-					<legend class="title">Tables</legend>
-					<p>Tablolar </p>
+					<legend class="title">Tablolar</legend>
+					<p class="m-2"></p>
 					<select name="tables" class="select">
 						<option></option>
 						<option value="combat">Combat</option>
