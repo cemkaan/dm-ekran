@@ -187,8 +187,8 @@ function addPC() {
 		// Take input, add 'strong' tag to name, add to 'myPCs' array, and print the new array
 		const input = PCtextarea.value.trim();
 		if (!input) throw new Error('No PC information entered');
-		const re = /(\w+),\s/;
-		const message = input.replace(re, `<strong>$1,</strong> `);
+		const re = /(\w+):\s/;
+		const message = input.replace(re, `<strong>$1:</strong> `);
 		myPCs.push(message);
 		printPCs();
 

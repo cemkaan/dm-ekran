@@ -4,5 +4,6 @@
   },
   "dependencies": {
     "browser-sync": "^2.26.13"
-  }
+  },
+  "version": "0.1.0"
 }

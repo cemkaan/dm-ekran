@@ -4,13 +4,28 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link href="https://fonts.googleapis.com/css?family=Kalam:700|Merienda" rel="stylesheet">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
 
+	<style>
+		.hanging-indent {
+			padding: 1.2rem;
+		}
+	</style>
 </head>
 
 <body class="container">
-
+	<section class="hero">
+		<div class="hero-body">
+			<div class="container">
+				<h1 class="title">
+					DM Ekranı
+				</h1>
+				<h2 class="subtitle">
+					AD&D 2nd Edition
+				</h2>
+			</div>
+		</div>
+	</section>
 	<main>
 		<div id="left">
 			<div id="dice" class="section">
@@ -77,16 +92,16 @@
 			<div id="pc-tracker" class="section">
 				<fieldset class="block">
 					<legend class="title">Oyuncu Takibi</legend>
-					<div class="pc-div notification is-primary"></div>
+					<div class="pc-div notification is-size-4 "></div>
 					<textarea class="textarea" name="name" rows="2" cols="80"
-						placeholder="Önce isim sonra virgülle ayrılmış bilgiler"></textarea>
+						placeholder="Önce isim: Sonra virgülle ayrılmış bilgiler"></textarea>
 					<br>
-					<p class="p-2"><strong>Tavsiyeler:</strong> İsim, Irk, class, passive perception(pasif algı),
+					<p class="p-2"><strong>Örnek:</strong> Manu: İnsan, Wizard, passive perception(pasif algı),
 						AC(pasif algı),
 						karakter özeti. </p>
-					<button type="button" class="button" name="addPC">Karakter Ekle</button>
-					<button type="button" class="button" name="editPC">Karakter Düzenle</button>
-					<button type="button" class="button" name="removePC">Karakter Kaldır</button>
+					<button type="button" class="button is-primary" name="addPC">Karakter Ekle</button>
+					<button type="button" class="button is-info" name="editPC">Karakter Düzenle</button>
+					<button type="button" class="button is-warning" name="removePC">Karakter Kaldır</button>
 				</fieldset>
 			</div>
 		</div>
