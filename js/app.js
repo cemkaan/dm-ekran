@@ -86,8 +86,8 @@ function rollDice(dispVal, numArr, sidesArr, modArr) {
 	}
 
 	// Finish 'message' with final 'sum' and a time stamp
-	message += ` <strong class="has-text-primary-dark"> Toplam:</strong> ${sum}`;
-	message += ' <span class="has-text-info" > ' + timeStamp() + ' </span> ';
+	message += ` <strong class="has-text-primary-dark">    Toplam:</strong> <span class="is-size-3" >${sum} </span>`;
+	message += '<span class="has-text-info" > ' + timeStamp() + ' </span> ';
 	// Pass to 'allRollsMessage' to tack on previous rolls and save to localStorage
 	message = allRollsMessage(message);
 	return message;
@@ -96,7 +96,7 @@ function rollDice(dispVal, numArr, sidesArr, modArr) {
 // Template time stamp: ' - 12:34:56'
 function timeStamp(message) {
 	let date = new Date();
-	return ` - ${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`;
+	return ` ${date.getHours()}:${date.getMinutes()}:<span class="is-size-6 has-text-grey-darker" > ${date.getSeconds()} </span>`;
 }
 
 // Construct a printable message from a new roll and up to 4 previous rolls
