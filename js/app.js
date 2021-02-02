@@ -230,7 +230,7 @@ function createEditDiv() {
 
 	const textInput = document.createElement('input');
 	textInput.type = 'text';
-	textInput.className = 'edit-pc';
+	textInput.className = 'input';
 	textInput.value = target.textContent;
 	PCdiv.replaceChild(textInput, target);
 }
@@ -244,7 +244,7 @@ function storeRevision() {
 
 	// Replace old entry with the revision
 	PCdiv.childNodes.forEach(function (val, ind) {
-		if (val.className === 'edit-pc') myPCs[ind] = message;
+		if (val.className === 'input') myPCs[ind] = message;
 	});
 	printPCs();
 
