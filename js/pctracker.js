@@ -177,15 +177,15 @@ function printPCs() {
 		const hp = /(HP):\s/u;
 		const nwp = /(NWP):\s/;
 		const ac = /(AC):\s/;
-		const elf = /(Elf):\s/;
+		const elf = /(Elf)\s/;
 		const taco = /(TACO):\s/;
 		p.innerHTML = myPCs[i]
-			.replace(buyu, `<strong class="has-text-info-light has-background-info-dark">$1:</strong> `)
-			.replace(hp, `<span class="has-text-success-light has-background-success-dark">$1:</span> `)
-			.replace(nwp, `<span class="has-text-white has-background-grey-darker">$1:</span> `)
-			.replace(ac, `<span class="has-text-white has-background-grey-darker">$1:</span> `)
-			.replace(elf, `<span class=" has-background-success-light">$1:</span> `)
-			.replace(taco, `<span class="has-text-white has-background-grey">$1:</span> `);
+			.replace(buyu, `<br><strong class="has-text-info-light has-background-info-dark">$1:</strong> `)
+			.replace(hp, `<br><span class="has-text-success-light has-background-success-dark">$1:</span> `)
+			.replace(nwp, `<br><span class="has-text-white has-background-grey-darker">$1:</span> `)
+			.replace(ac, `<br><span class="has-text-white has-background-grey-darker">$1:</span> `)
+			.replace(elf, `<br><span class=" has-background-success-light">$1:</span> `)
+			.replace(taco, `<br><span class="has-text-white has-background-grey">$1:</span> `);
 		PCdiv.appendChild(p);
 	}
 	storePlayerCharacters();
