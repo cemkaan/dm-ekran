@@ -75,7 +75,7 @@ function editPC() {
 	if (!PCdiv.childNodes.length) return false;
 
 	// Change text content to 'Cancel' and alter alter event listeners
-	alterButton(editPCbutton, 'Cancel', editPC, removeInlineButtons);
+	alterButton(editPCbutton, 'İptal', editPC, removeInlineButtons);
 
 	// Add an 'edit' button to the div for each PC
 	const pcDivs = PCdiv.children;
@@ -93,7 +93,7 @@ function createEditDiv() {
 	const target = this.parentNode;
 	removeInlineButtons();
 
-	alterButton(editPCbutton, 'Save Changes', removeInlineButtons, storeRevision);
+	alterButton(editPCbutton, 'Değişiklikleri Kaydet', removeInlineButtons, storeRevision);
 
 	const textInput = document.createElement('input');
 	textInput.type = 'text';
@@ -127,7 +127,7 @@ function removePC() {
 	if (!PCdiv.childNodes.length) return false;
 
 	// Change text content to 'Cancel' and alter alter event listeners
-	alterButton(removePCbutton, 'Cancel', removePC, removeInlineButtons);
+	alterButton(removePCbutton, 'İptal', removePC, removeInlineButtons);
 
 	// Add a 'delete' button to the div for each PC
 	const pcDivs = PCdiv.children;
@@ -175,11 +175,17 @@ function printPCs() {
 		p.className = 'hanging-indent';
 		const buyu = /(Büyüler):\s/iu;
 		const hp = /(HP):\s/u;
-		const nwp = /(NWP),\s/;
+		const nwp = /(NWP):\s/;
+		const ac = /(AC):\s/;
+		const elf = /(Elf):\s/;
+		const taco = /(TACO):\s/;
 		p.innerHTML = myPCs[i]
 			.replace(buyu, `<strong class="has-text-info-light has-background-info-dark">$1:</strong> `)
 			.replace(hp, `<span class="has-text-success-light has-background-success-dark">$1:</span> `)
-			.replace(nwp, `<span class="has-text-white has-background-grey-darker">$1:</span> `);
+			.replace(nwp, `<span class="has-text-white has-background-grey-darker">$1:</span> `)
+			.replace(ac, `<span class="has-text-white has-background-grey-darker">$1:</span> `)
+			.replace(elf, `<span class=" has-background-success-light">$1:</span> `)
+			.replace(taco, `<span class="has-text-white has-background-grey">$1:</span> `);
 		PCdiv.appendChild(p);
 	}
 	storePlayerCharacters();
