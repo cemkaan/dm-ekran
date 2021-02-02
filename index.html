@@ -36,51 +36,7 @@
 				</fieldset>
 				<p id="display" class="notification is-size-4"></p>
 			</div>
-			<div id="calculator" class="section box is-hidden">
-				<form name="calculator">
-					<table>
-						<tr>
-							<td colspan="4">
-								<input type="text" name="display" class="input is-size-4 mb-5" value='0'>
-							</td>
-						</tr>
-						<tr>
-							<td><button class="calc-func button is-danger m-1" name="clearEntry" value="CE">CE</button>
-							</td>
-							<td><button class="calc-func button is-warning m-1" name="clear" value="C">C</button></td>
-							<td><button class="calc-func button is-primary m-1" name="backspace"
-									value="&larr;">&larr;</button></td>
-							<td><button class="operator button is-info m-1" name="divide" value="&#247;">&#247;</button>
-							</td>
-						</tr>
-						<tr>
-							<td><button class="number" name="seven" value="7">7</button></td>
-							<td><button class="number" name="eight" value="8">8</button></td>
-							<td><button class="number" name="nine" value="9">9</button></td>
-							<td><button class="operator button is-info m-1 " name="times" value="&#215;">&#215;</button>
-							</td>
-						</tr>
-						<tr>
-							<td><button class="number" name="four" value="4">4</button></td>
-							<td><button class="number" name="five" value="5">5</button></td>
-							<td><button class="number" name="six" value="6">6</button></td>
-							<td><button class="operator button is-info m-1" name="minus" value="-"> - </button></td>
-						</tr>
-						<tr>
-							<td><button class="number" name="one" value="1">1</button></td>
-							<td><button class="number" name="two" value="2">2</button></td>
-							<td><button class="number" name="three" value="3">3</button></td>
-							<td><button class="operator button is-info m-1 " name="plus" value="+">+</button></td>
-						</tr>
-						<tr>
-							<td><button class="calc-func " name="negation" value="&#xb1;">&#xb1;</button></td>
-							<td><button class="number" name="zero" value="0">0</button></td>
-							<td><button class="number" name="decimal" value=".">.</button></td>
-							<td><button class="operator button is-primary m-1" name="equals" value="=">=</button></td>
-						</tr>
-					</table>
-				</form>
-			</div>
+
 			<div id="pc-tracker" class="section">
 				<fieldset class="block">
 					<legend class="title">Oyuncu Takibi</legend>
@@ -99,31 +55,6 @@
 		</div>
 
 		<div id="right">
-			<div id="tables" class="section is-hidden">
-				<fieldset class="block">
-					<legend class="title">Tablolar</legend>
-					<p class="m-2"></p>
-					<select name="tables" class="select">
-						<option></option>
-						<option value="combat">Combat</option>
-						<option value="cond-dying">Conditions &amp; Dying</option>
-						<option value="eq-weap">Weapons</option>
-						<option value="eq-armor">Armor &amp; Services</option>
-						<option value="misc">Misc</option>
-						<option value="check-str">Strength Checks</option>
-						<option value="check-dex">Dex Checks</option>
-						<option value="check-con">Con Checks</option>
-						<option value="check-int">Int Checks</option>
-						<option value="check-wis">Wis Checks</option>
-						<option value="check-cha">Cha Checks</option>
-						<option value="enc-rand">Random Encounters</option>
-						<option value="enc-build">Encounter Building</option>
-					</select>
-					<button>Tablo getir!</button>
-					<br>
-					<img>
-				</fieldset>
-			</div>
 			<div id="initiative" class="section is-hidden">
 				<fieldset class="block">
 					<legend class="title">Initiative Takip</legend>
@@ -173,7 +104,8 @@
 			<button>Git!</button>
 		</div>
 	</footer>
-	<script src="./js/app.js"></script>
+	<script src="./js/pctracker.js"></script>
+	<script src="./js/dice.js"></script>
 
 
 </body>
