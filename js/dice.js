@@ -4,12 +4,16 @@ const diceDiv = document.querySelector('#dice');
 const diceButtons = diceDiv.firstElementChild.querySelectorAll('button');
 const rollButton = Array.from(diceButtons).shift();
 const diceInput = rollButton.previousElementSibling;
+const kim = rollButton.parentElement.childNodes[1];
 
-rollButton.addEventListener('click', function () { rollForInputValues(diceInput.value); });
+rollButton.addEventListener('click', () => {
+    rollForInputValues(kim.value, diceInput.value);
+    console.log('kim :>> ', kim.value);
+});
 /* Add listener here for 'enter' */
 for (let i = 1; i < diceButtons.length; i++) {
     diceButtons[i].addEventListener('click', function () {
-        print(rollDice(`1d${diceButtons[i].value}`, [1], [diceButtons[i].value]))
+        print(rollDice(kim.value, `1d${diceButtons[i].value}`, [1], [diceButtons[i].value]))
         // (display value, number of dice, die sides)
     });
 }
@@ -17,9 +21,9 @@ for (let i = 1; i < diceButtons.length; i++) {
 function d(sides) { return Math.floor(Math.random() * sides) + 1; };
 
 // Reads and prints for user-inputed roll value
-function rollForInputValues(val) {
+function rollForInputValues(kim, val) {
     try {
-        if (!val) throw new Error('Please enter a roll value');
+        if (!val) throw new Error('bir zar değeri bekliyorum');
 
         // Separate input into sections based on instances of '+'
         const rolls = val.split('+');
@@ -53,15 +57,15 @@ function rollForInputValues(val) {
         diceInput.focus();
 
         // Roll and print
-        print(rollDice(val, numOfDice, dieSides, modifier));
+        print(rollDice(kim, val, numOfDice, dieSides, modifier));
 
     } catch (err) { handler(err); }
 }
 
 // Returns a readable message to display based while making dice rolls
 // Template: '(1d8+1d6+5): 8, 6, 5 (19 total) - 12:34:56'
-function rollDice(dispVal, numArr, sidesArr, modArr) {
-    let message = `<span class="has-background-dark has-text-info-light" > ${dispVal}</span >`;
+function rollDice(kim, dispVal, numArr, sidesArr, modArr) {
+    let message = `<span class="has-text-info" > ${kim}: </span > <span class="has-background-dark has-text-info-light" > ${dispVal}</span >`;
     let sum = 0;
 
     // For each value in 'numArr'...
@@ -104,7 +108,7 @@ function allRollsMessage(newRoll) {
     previousRolls.unshift(newRoll);
     if (previousRolls.length > 5) { previousRolls.pop(); };
     let message = '<ol>';
-    previousRolls.forEach(function (val) { message += `<li>${val}</li>`; });
+    previousRolls.forEach(function (val) { message += `<li class="my-3">${val}</li>`; });
     message += '</ol>';
     return message;
 }

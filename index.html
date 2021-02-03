@@ -7,11 +7,7 @@
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
 
 
-	<style>
-		#display li {
-			margin: 1rem;
-		}
-	</style>
+
 </head>
 
 <body class="container">
@@ -19,8 +15,9 @@
 		<div id="left">
 			<div id="dice" class="section">
 				<fieldset class="block">
-					<input type="text" placeholder="ÖR: 1d20+3" class="input my-5">
-					<button class="button is-primary">ZAR AT</button>
+					<input class="input is-success" type="text" placeholder="Kim adına zar atıyorsun?">
+					<input type="text" placeholder="ÖR: 1d20+3" class="input my-2">
+					<button class="button is-primary mx-3">ZAR AT</button>
 					<button class="button" value="100">d100</button>
 					<button class="button" value="20">d20</button>
 					<button class="button" value="12">d12</button>
@@ -29,6 +26,7 @@
 					<button class="button" value="6">d6</button>
 					<button class="button" value="4">d4</button>
 					<button class="button" value="3">d3</button>
+
 				</fieldset>
 				<p id="display" class="notification is-size-4"></p>
 			</div>
@@ -71,38 +69,9 @@
 
 		</div>
 	</main>
-	<footer class="footer">
-		<div id="links">
-			<select class="select">
-				<option value="">Faydalı bağlantılar</option>
 
-				<option value="https://donjon.bin.sh/adnd/dungeon/">Dungeon Generator: donjon Generator</option>
-
-				<option value="https://www.dandwiki.com/wiki/2.5e_Homebrew">Homebrew: DanDwiki (Worlds, rewards,
-					hazards,
-					quests, more)</option>
-				<option value="https://donjon.bin.sh/adnd/random/">AD&D Random Generator</option>
-				<option value="https://donjon.bin.sh/adnd/treasure/">AD&D Random Treasure Generator</option>
-
-
-				<option value="https://crobi.github.io/dnd5e-quickref/preview/quickref.html">Reference: Quick Conditions
-					Reference</option>
-				<option value="http://s3.amazonaws.com/slyflourish_content/dnd_campaign_sheet.pdf">Reference: Sly
-					Flourish quick reference</option>
-				<option
-					value="https://drive.google.com/drive/folders/0B7kxaEiej5VlfnVQODdKdjVvclQ2TFFiUy1yOG5NVlVoY29fa3pjdkNGSmFYZU5TZFd6aEE">
-					Resources: 5e Resources</option>
-
-
-
-				<option value="https://www.dnd-spells.com/spells">Spell Tracker &amp; List: dnd-spells.com</option>
-			</select>
-			<button>Git!</button>
-		</div>
-	</footer>
 	<script src="./js/pctracker.js"></script>
 	<script src="./js/dice.js"></script>
-
 
 </body>
 
