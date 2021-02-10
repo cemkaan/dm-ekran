@@ -52,7 +52,7 @@ function addPC() {
 
 		// Take input, add 'strong' tag to name, add to 'myPCs' array, and print the new array
 		const input = PCtextarea.value.trim();
-		if (!input) throw new Error('No PC information entered');
+		if (!input) throw new Error('Oyuncu bilgisi girilmedi');
 		const isim = /(\w+):\s/iu;
 		//const buyu = /(Büyü):\s/iu;
 		const message = input.replace(isim, `<strong class="has-text-warning-light has-background-danger-dark">$1:</strong> `);
