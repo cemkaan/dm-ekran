@@ -176,16 +176,16 @@ function printPCs() {
 		const buyu = /(Büyüler):\s/iu;
 		const hp = /(HP):\s/u;
 		const nwp = /(NWP):\s/;
-		const ac = /(AC):\s/;
+		const str = /(Str)\s/;
 		const elf = /(Elf)\s/;
-		const taco = /(TACO):\s/;
+		const backPack = /(BackPack)\s/;
 		p.innerHTML = myPCs[i]
 			.replace(buyu, `<br><strong class="has-text-info-light has-background-info-dark ml-5">$1:</strong> `)
 			.replace(hp, `<br><span class="has-text-success-light has-background-success-dark ml-5">$1:</span> `)
 			.replace(nwp, `<br><span class="has-text-white has-background-grey-darker ml-5">$1:</span> `)
-			.replace(ac, `<br><span class="has-text-white has-background-grey-darker ml-5">$1:</span> `)
+			.replace(str, `<br><span class="has-text-white has-background-grey-darker ml-5">$1:</span> `)
 			.replace(elf, `<br><span class=" has-background-success-light ml-5">$1:</span> `)
-			.replace(taco, `<br><span class="has-text-white has-background-grey ml-5">$1:</span> `);
+			.replace(backPack, `<br><span class="has-text-white has-background-grey ml-5">$1:</span> `);
 		PCdiv.appendChild(p);
 	}
 	storePlayerCharacters();
