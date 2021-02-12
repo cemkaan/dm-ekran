@@ -183,9 +183,9 @@ function printPCs() {
 			.replace(buyu, `<br><strong class="has-text-info-light has-background-info-dark ml-5">$1:</strong> `)
 			.replace(hp, `<br><span class="has-text-success-light has-background-success-dark ml-5">$1:</span> `)
 			.replace(nwp, `<br><span class="has-text-white has-background-grey-darker ml-5">$1:</span> `)
-			.replace(str, `<br><span class="has-text-white has-background-grey-darker ml-5">$1:</span> `)
-			.replace(elf, `<br><span class=" has-background-success-light ml-5">$1:</span> `)
-			.replace(backPack, `<br><span class="has-text-white has-background-grey ml-5">$1:</span> `);
+			.replace(str, `<br><span class="has-text-white has-background-grey-darker ml-5">$1</span> `)
+			.replace(elf, `<br><span class=" has-background-success-light ml-5">$1</span> `)
+			.replace(backPack, `<br><span>$1</span> `);
 		PCdiv.appendChild(p);
 	}
 	storePlayerCharacters();
